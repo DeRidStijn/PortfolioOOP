@@ -8,6 +8,7 @@ class Tower{
     private $health = 0;
     private $minions = [];
     private $leftRight = "left";
+    private $enemyMinions = [];
     public function __construct(string $name, int $gold, int $health, string $leftRight){
         $this->name = $name;
         $this->gold = $gold;
@@ -23,6 +24,21 @@ class Tower{
         }
     }
     
+    public function moveMinionsAndAttack(){
+        /*
+            loop over the array of minions the tower has
+            Enemy in front of them?
+                ?Attack and take damage
+                :Move the right amount of steps
+                Enemy or tower in from of them?
+                    ?Attack and take damage
+        */
+        foreach ($minions as $minion){
+            // loop over enemy minions and see if they clash
+
+
+        }
+    }
     public function takeDamage($damage):int {
         $this->health -= $damage;
         return $this->health;
@@ -42,5 +58,11 @@ class Tower{
 
     public function getHealth():int{
         return $this->health;
+    }
+    public function getMinions(){
+        return $this->minions;
+    }
+    public function setEnemyMinions($enemyMinions){
+        $this->enemyMinions = $enemyMinions;
     }
 }

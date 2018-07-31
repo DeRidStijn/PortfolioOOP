@@ -28,15 +28,11 @@ class Minion{
     }
 
     public function attack(){
-
+        return $this->damage;
     }
 
-    public function takeDamage(){
-
-    }
-
-    public function die(){
-        
+    public function takeDamage(int $damage){
+        $this->health -= $damage;
     }
 
     /**
