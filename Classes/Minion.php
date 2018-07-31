@@ -82,4 +82,8 @@ class Minion{
     {
         return $this->speed;
     }
+
+    public function getLocation(){
+        return $this->location;
+    }
 }
