@@ -10,8 +10,8 @@ class Minion{
     private $damage = 0;
     private $speed = 0;
     private $location = 0;
-
-    public function __construct(string $name, string $type, int $range, int $health, int $damage, int $speed ){
+    private $orientation = "left";
+    public function __construct(string $name, string $type, int $range, int $health, int $damage, int $speed, string $orientation){
         //toDo: let range, health and damage depend on type?
         $this->name = $name;
         $this->type = $type;
@@ -19,10 +19,12 @@ class Minion{
         $this->health = $health;
         $this->damage = $damage;
         $this->speed = $speed;
+        $this->location = ($orientation === "left" ? 0 : 20);
+        $this->orientation = $orientation;
     }
 
     public function move(){
-
+        ($this->orientation === "left") ? ($this->location += (1 * $this->speed)) : ($this->location -= (1 * $this->speed));
     }
 
     public function attack(){
