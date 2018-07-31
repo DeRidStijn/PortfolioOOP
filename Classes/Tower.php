@@ -1,10 +1,12 @@
 <?php 
+namespace Classes;
 class Tower{
     private $name = "";
     private $gold = 0;
     private $health = 0;
     private $minions = [];
-    public function __construct(string $name, int $gold, int $health){
+    private $leftRight = "left";
+    public function __construct(string $name, int $gold, int $health, string $leftRight){
         $this->name = $name;
         $this->gold = $gold;
         $this->health = $health;
